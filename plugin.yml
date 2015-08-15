@@ -4,3 +4,7 @@ version: "1.0.0"
 api: [1.0.0]
 description: Places a block under a player upon walking. 
 main: Sean_M\FootBlock\Main
+
+commands:
+    block:
+        description: "Activates / deactivates FootBlock."
