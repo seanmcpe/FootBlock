@@ -31,7 +31,7 @@ class Main extends PluginBase implements Listener{
         $level = $player->getLevel();
         $block = Block::get($player->getInventory()->getItemInHand()->getId(), 0);  
         $floor = $player->getFloorX(), $player->getFloorY() - 1, $player->getFloor();
-        if($this->isPlayer($sender) {
+        if($this->isPlayer($sender){
             $level->setBlock(new Vector3($floor, $block));
         }
      }
@@ -57,15 +57,15 @@ class Main extends PluginBase implements Listener{
         }
     }
 
-    public function addPlayer(Player $player) {
+    public function addPlayer(Player $player){
         $this->players[$player->getName()] = $player->getName();
     }
 
-    public function isPlayer(Player $player) {
+    public function isPlayer(Player $player){
         return in_array($this->players[$player->getName());
     }
 
-    public function removePlayer(Player $player) {
+    public function removePlayer(Player $player){
         unset($this->players[$player->getName()]);
     }
 }
