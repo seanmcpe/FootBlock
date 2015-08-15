@@ -1,5 +1,0 @@
-# FootBlock v1.0.0 by Sean_M
-# Editing anything other than the block number will crash the server.
-# If you want to reset the config, delete the file and reboot the server.
----
-block: 152
