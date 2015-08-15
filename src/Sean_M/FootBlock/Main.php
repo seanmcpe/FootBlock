@@ -31,4 +31,16 @@ class Main extends PluginBase implements Listener{
         $floor = $player->getFloorX(), $player->getFloorY() - 1, $player->getFloor();
         $level->setBlock(new Vector3($floor, $block));
      }
+
+    public function addPlayer(Player $player) {
+        $this->players[$player->getName()] = $player->getName();
+    }
+
+    public function isPlayer(Player $player) {
+        return in_array($this->players[$player->getName());
+    }
+
+    public function removePlayer(Player $player) {
+        unset($this->players[$player->getName()]);
+    }
 }
