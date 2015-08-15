@@ -1,1 +1,6 @@
-
+name: FootBlock
+author: Sean_M
+version: "1.0.0"
+api: [1.0.0]
+description: Places a block under a player upon walking. 
+main: Sean_M\FootBlock\Main
