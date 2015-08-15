@@ -12,13 +12,10 @@ use pocketmine\Player;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 
-use FootBlock\Commands\Block;
-
 class Main extends PluginBase implements Listener{
 
      public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
-        $this->getCommand("block")->setExecuter(new Commands\Block($this));
         $this->getLogger()->info(TextFormat::GREEN . "FootBlock by Sean_M enabled!");
      }
 
