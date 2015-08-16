@@ -6,5 +6,5 @@ description: Places a block under a player upon walking.
 main: Sean_M\FootBlock\Main
 
 commands:
-    block:
-        description: "Activates / deactivates FootBlock."
+    footblock:
+        description: "Activates or deactivates FootBlock."
