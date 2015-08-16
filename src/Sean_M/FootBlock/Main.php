@@ -14,6 +14,8 @@ use pocketmine\command\CommandSender;
 
 class Main extends PluginBase implements Listener{
 
+    public $players = array();
+
      public function onEnable(){
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
         $this->getLogger()->info(TextFormat::GREEN . "FootBlock by Sean_M enabled!");
@@ -27,14 +29,14 @@ class Main extends PluginBase implements Listener{
         $player = $event->getPlayer();
         $level = $player->getLevel();
         $block = Block::get($player->getInventory()->getItemInHand()->getId(), 0);  
-        $floor = $player->getFloorX(), $player->getFloorY() - 1, $player->getFloor();
-        if($this->isPlayer($sender){
-            $level->setBlock(new Vector3($floor, $block));
+        $pos = new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ());
+        if($this->isPlayer($player)){
+            $level->setBlock($pos, $block);
         }
      }
 
     public function onCommand(CommandSender $sender, Command $cmd, $label,array $args){
-        if(strtolower($cmd->getName()) === "FootBlock"){
+        if(strtolower($cmd->getName()) === "footblock"){
             if($sender instanceof Player){
                 if($this->isPlayer($sender)){
                     $this->removePlayer($sender);
@@ -59,7 +61,7 @@ class Main extends PluginBase implements Listener{
     }
 
     public function isPlayer(Player $player){
-        return in_array($this->players[$player->getName());
+        return in_array($player->getName(), $this->players);
     }
 
     public function removePlayer(Player $player){
