@@ -26,11 +26,11 @@ class Main extends PluginBase implements Listener{
      }
    
      public function onPlayerMove(PlayerMoveEvent $event){
+         if($this->isPlayer($player)){
         $player = $event->getPlayer();
         $level = $player->getLevel();
         $block = Block::get($player->getInventory()->getItemInHand()->getId(), 0);  
         $pos = new Vector3($player->getFloorX(), $player->getFloorY() - 1, $player->getFloorZ());
-        if($this->isPlayer($player)){
             $level->setBlock($pos, $block);
         }
      }
